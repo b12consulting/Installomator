@@ -2383,6 +2383,30 @@ blender)
     fi
     expectedTeamID="68UA947AUU"
     ;;
+blockblock)
+    name="BlockBlock"
+    type="zip"
+    downloadURL="$(downloadURLFromGit objective-see BlockBlock)"
+    appNewVersion="$(versionFromGit objective-see BlockBlock)"
+    expectedTeamID="VBG97UB4TA"
+    ;;
+reikey)
+    name="Reikey"
+    type="zip"
+    downloadURL="$(downloadURLFromGit objective-see Reikey)"
+    appNewVersion="$(versionFromGit objective-see Reikey)"
+    expectedTeamID="VBG97UB4TA"
+    ;;
+ransomwhere)
+    name="RansomWhere_Installer"
+    type="zip"
+    downloadURL="https://bitbucket.org/objective-see/deploy/downloads/RansomWhere_$(curl -s https://objective-see.org/products/changelogs/RansomWhere.txt | grep -m 1 VERSION | awk '{print $2}').zip"
+    appNewVersion="$(curl -s https://objective-see.org/products/changelogs/RansomWhere.txt | grep -m 1 VERSION | awk '{print $2}')"
+    installerTool="RansomWhere_Installer.app"
+    CLIInstaller="RansomWhere_Installer.app/Contents/MacOS/RansomWhere_Installer"
+    CLIArguments=( -install )
+    expectedTeamID="VBG97UB4TA"
+    ;;
 bluejeans)
     name="BlueJeans"
     type="pkg"
