@@ -2381,6 +2381,13 @@ blender)
     fi
     expectedTeamID="68UA947AUU"
     ;;
+blockblock)
+    name="BlockBlock Installer"
+    type="zip"
+    downloadURL="$(downloadURLFromGit objective-see BlockBlock)"
+    appNewVersion="$(versionFromGit objective-see BlockBlock)"
+    expectedTeamID="VBG97UB4TA"
+    ;;
 bluejeans)
     name="BlueJeans"
     type="pkg"

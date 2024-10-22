@@ -94,6 +94,7 @@ bibdesk
 bitrix24
 bitwarden
 blender
+blockblock
 bluejeans
 bluejeanswithaudiodriver
 boop
