@@ -2390,13 +2390,6 @@ blockblock)
     appNewVersion="$(versionFromGit objective-see BlockBlock)"
     expectedTeamID="VBG97UB4TA"
     ;;
-reikey)
-    name="Reikey"
-    type="zip"
-    downloadURL="$(downloadURLFromGit objective-see Reikey)"
-    appNewVersion="$(versionFromGit objective-see Reikey)"
-    expectedTeamID="VBG97UB4TA"
-    ;;
 ransomwhere)
     name="RansomWhere_Installer"
     type="zip"
