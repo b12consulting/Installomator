@@ -46,7 +46,7 @@ PROMPT_TIMEOUT=86400
 
 # behavior when blocking processes are found
 # BLOCKING_PROCESS_ACTION is ignored if app label uses updateTool
-BLOCKING_PROCESS_ACTION=tell_user
+BLOCKING_PROCESS_ACTION=prompt_user
 # options:
 #   - ignore       continue even when blocking processes are found
 #   - quit         app will be told to quit nicely if running
@@ -141,13 +141,13 @@ REOPEN="yes"
 
 
 # Interrupt Do Not Disturb (DND) full screen apps
-INTERRUPT_DND="yes"
+INTERRUPT_DND="no"
 # options:
 #  - yes           Script will run without checking for DND full screen apps.
 #  - no            Script will exit when an active DND full screen app is detected.
 
 # Comma separated list of app names to ignore when evaluating DND
-IGNORE_DND_APPS=""
+IGNORE_DND_APPS="firefox,Google Chrome,Safari,Microsoft Edge,Opera,Amphetamine,caffeinate"
 # example that will ignore browsers when evaluating DND:
 # IGNORE_DND_APPS="firefox,Google Chrome,Safari,Microsoft Edge,Opera,Amphetamine,caffeinate"
 
@@ -3087,6 +3087,13 @@ defaultfolderx)
     type="dmg"
     downloadURL=$(curl -fs "https://www.stclairsoft.com/cgi-bin/dl.cgi?DX" | awk -F '"' "/dmg/ {print \$4}" | head -2 | tail -1)
     expectedTeamID="7HK42V8R9D"
+    ;;
+defguard)
+    name="defguard-client"
+    type="pkg"
+    downloadURL="$(downloadURLFromGit DefGuard client)"
+    appNewVersion="$(versionFromGit DefGuard client)"
+    expectedTeamID="6WD6W6WQNV"
     ;;
 depnotify)
     name="DEPNotify"
