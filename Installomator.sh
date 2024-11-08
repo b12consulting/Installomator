@@ -3093,11 +3093,12 @@ defguard)
     type="pkg"
     appNewVersion="$(versionFromGit DefGuard client)"
     if [[ "$(arch)" == "arm64" ]]; then
-        downloadURL="https://github.com/DefGuard/client/releases/download/${appNewVersion}/defguard-aarch64-apple-darwin-${appNewVersion:1}.pkg"
+        downloadURL="https://github.com/DefGuard/client/releases/download/v${appNewVersion}/defguard-aarch64-apple-darwin-${appNewVersion}.pkg"
+        expectedTeamID="VBG97UB4TA"
     else
-        downloadURL="https://github.com/DefGuard/client/releases/download/${appNewVersion}/defguard-x86_64-apple-darwin-${appNewVersion:1}.pkg"
+        downloadURL="https://github.com/DefGuard/client/releases/download/v${appNewVersion}/defguard-x86_64-apple-darwin-${appNewVersion}.pkg"
+        expectedTeamID="6WD6W6WQNV"
     fi
-    expectedTeamID="VBG97UB4TA"
     ;;
 depnotify)
     name="DEPNotify"
