@@ -175,6 +175,7 @@ debookee
 dedoose
 deepl
 defaultfolderx
+defguard
 depnotify
 desktoppr
 detectxswift
