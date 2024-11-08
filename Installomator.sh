@@ -3091,9 +3091,13 @@ defaultfolderx)
 defguard)
     name="defguard-client"
     type="pkg"
-    downloadURL="$(downloadURLFromGit DefGuard client)"
     appNewVersion="$(versionFromGit DefGuard client)"
-    expectedTeamID="6WD6W6WQNV"
+    if [[ "$(arch)" == "arm64" ]]; then
+        downloadURL="https://github.com/DefGuard/client/releases/download/${appNewVersion}/defguard-aarch64-apple-darwin-${appNewVersion:1}.pkg"
+    else
+        downloadURL="https://github.com/DefGuard/client/releases/download/${appNewVersion}/defguard-x86_64-apple-darwin-${appNewVersion:1}.pkg"
+    fi
+    expectedTeamID="VBG97UB4TA"
     ;;
 depnotify)
     name="DEPNotify"
