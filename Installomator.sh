@@ -46,7 +46,7 @@ PROMPT_TIMEOUT=86400
 
 # behavior when blocking processes are found
 # BLOCKING_PROCESS_ACTION is ignored if app label uses updateTool
-BLOCKING_PROCESS_ACTION=prompt_user
+BLOCKING_PROCESS_ACTION=prompt_user_then_kill
 # options:
 #   - ignore       continue even when blocking processes are found
 #   - quit         app will be told to quit nicely if running
@@ -2524,7 +2524,12 @@ blockblock)
     type="zip"
     downloadURL="$(downloadURLFromGit objective-see BlockBlock)"
     appNewVersion="$(versionFromGit objective-see BlockBlock)"
+    installerTool="BlockBlock Installer.app"
+    CLIInstaller="BlockBlock Installer.app/Contents/MacOS/BlockBlock Installer"
+    CLIArguments=(-install)
+    blockingProcesses=( "BlockBlock Helper" "BlockBlock" )
     expectedTeamID="VBG97UB4TA"
+    REOPEN="no"
     ;;
 ransomwhere)
     name="RansomWhere_Installer"
